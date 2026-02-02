@@ -1,4 +1,4 @@
-# Getting Started — TypeScript Pivot Table Component (Syncfusion EJ2)
+# 📊 Getting Started — TypeScript Pivot Table Component (Syncfusion EJ2)
 
 [![License](https://img.shields.io/badge/license-SEE%20LICENSE%20IN%20license-blue.svg)](license)
 [![Last Updated](https://img.shields.io/github/last-commit/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component.svg)](https://github.com/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component/commits)
@@ -10,25 +10,25 @@
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Minimal Example](#minimal-example)
-- [Project Structure](#project-structure)
-- [Configuration & Customization](#configuration--customization)
-- [Development & Tests](#development--tests)
-- [Contributing](#contributing)
-- [License & Support](#license--support)
+- [🔍 Overview](#-overview)
+- [✨ Features](#-features)
+- [🧭 Quick Start](#-quick-start)
+- [🧩 Minimal Example](#-minimal-example)
+- [🗂️ Project Structure](#-project-structure)
+- [⚙️ Configuration & Customization](#-configuration--customization)
+- [🧪 Development & Tests](#-development--tests)
+- [🤝 Contributing](#-contributing)
+- [📜 License & Support](#-license--support)
 
 ---
 
-## Overview
+## 🔍 Overview
 
 This repository is a focused quick-start template that demonstrates how to integrate Syncfusion's `PivotView` (Pivot Table) into a TypeScript application. It highlights features such as `FieldList`, `GroupingBar` and `CalculatedField` and provides copy-paste-ready examples and build scripts using Webpack and TypeScript.
 
-## Features
+## ✨ Features
 
 - Demo integration of `PivotView` with `FieldList` and `CalculatedField`.
 - Sample dataset for immediate experimentation.
@@ -36,12 +36,12 @@ This repository is a focused quick-start template that demonstrates how to integ
 - Example of `PivotView.Inject(...)` usage to load optional modules.
 - Small, focused codebase intended for learning and prototyping.
 
-## Quick Start
+## 🚀 Quick Start
 
 Requirements:
 
 - Node.js (LTS recommended)
-- npm (or yarn)
+- npm
 
 Commands:
 
@@ -64,7 +64,7 @@ Note: this repo currently uses the umbrella package `@syncfusion/ej2` in `packag
 npm install @syncfusion/ej2-pivotview
 ```
 
-## Minimal Example
+## 🧩 Minimal Example
 
 Core initialization (from `src/app/app.ts`):
 
@@ -106,7 +106,7 @@ Ensure an HTML mount point exists in `src/index.html`:
 <div id="PivotTable"></div>
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 - `package.json` — scripts & deps
 - `webpack.config.js` — bundler config
@@ -118,20 +118,20 @@ Ensure an HTML mount point exists in `src/index.html`:
 	- `resources/styles/` — CSS
 - `e2e/` — end-to-end test scaffolding
 
-## Configuration & Customization
+## ⚙️ Configuration & Customization
 
 - To reduce bundle size, install only `@syncfusion/ej2-pivotview` and remove the umbrella `@syncfusion/ej2`.
 - For large datasets enable `enableVirtualization` or use `DataManager`.
 - Swap themes by importing the appropriate Syncfusion CSS for your chosen theme.
 
-## Development & Tests
+## 🧪 Development & Tests
 
 - Start dev server: `npm start` (webpack-dev-server)
 - Build: `npm run build`
 - E2E serve: `npm run serve`
 - Run e2e tests: `npm test`
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome. Please follow these simple steps:
 
@@ -141,15 +141,15 @@ Contributions are welcome. Please follow these simple steps:
 
 See `CONTRIBUTING.md` (recommended) for full guidelines.
 
-## License & Support
+## 📜 License & Support
 
-This project includes a `license` file in the repository root. For commercial support, consult Syncfusion's support channels.
+Essential JS 2 library is available under the Syncfusion Essential Studio program,  and can be licensed either under the Syncfusion Community License Program or the Syncfusion commercial license.
 
-## SEO & Metadata
+To be qualified for the Syncfusion Community License Program you must have a gross revenue of less than one (1) million U.S. dollars ($1,000,000.00 USD) per year and have less than five (5) developers in your organization, and agree to be bound by Syncfusion’s terms and conditions. 
 
-- Meta description (<=160 chars): "TypeScript quick-start: Syncfusion EJ2 PivotView demo with FieldList, GroupingBar, and CalculatedField — sample code & build scripts."
-- Suggested topics: `syncfusion`, `ej2`, `typescript`, `pivot-table`, `pivotview`, `pivottable`, `quickstart`, `example`.
+Customers who do not qualify for the community license can contact sales@syncfusion.com for commercial licensing options.
 
----
+Under no circumstances can you use this product without (1) either a Community License or a commercial license and (2) without agreeing and abiding by Syncfusion’s license containing all terms and conditions. 
 
-Last updated: 2026-02-02
+The Syncfusion license that contains the terms and conditions can be found at 
+https://www.syncfusion.com/content/downloads/syncfusion_license.pdf
