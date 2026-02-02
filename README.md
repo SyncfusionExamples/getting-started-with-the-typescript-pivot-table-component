@@ -139,8 +139,6 @@ Contributions are welcome. Please follow these simple steps:
 2. Follow TypeScript strict typing and existing style
 3. Run tests locally and open a PR with a clear description
 
-See `CONTRIBUTING.md` (recommended) for full guidelines.
-
 ## 📜 License & Support
 
 Essential JS 2 library is available under the Syncfusion Essential Studio program,  and can be licensed either under the Syncfusion Community License Program or the Syncfusion commercial license.
