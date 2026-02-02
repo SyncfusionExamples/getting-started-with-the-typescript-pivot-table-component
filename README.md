@@ -1,16 +1,153 @@
-# getting-started-with-the-typescript-pivot-table-component
-A quick-start project that demonstrates how to integrate a typescript pivot table component into a typescript application with some of its fundamental features such as FieldList, GroupingBar, and CalculatedField.
+# 📊 Getting Started — TypeScript Pivot Table Component (Syncfusion EJ2)
 
-Refer to the following documentation to learn about the Typescript pivot table Component:
-https://ej2.syncfusion.com/documentation/pivotview/getting-started
+[![License](https://img.shields.io/badge/license-SEE%20LICENSE%20IN%20license-blue.svg)](license)
+[![Last Updated](https://img.shields.io/github/last-commit/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component.svg)](https://github.com/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component/commits)
+[![Languages](https://img.shields.io/github/languages/top/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component.svg)](https://github.com/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component)
 
-Check out this online example of the Typescript pivot table Component:
-https://ej2.syncfusion.com/demos/#/fluent2/pivot-table/overview.html
+> TypeScript quick-start demonstrating Syncfusion EJ2 `PivotView` (Pivot Table) with `FieldList`, `GroupingBar`, and `CalculatedField` — includes sample data, build scripts, and usage examples.
 
-## Project prerequisites
+> **Demo (official):** https://ej2.syncfusion.com/demos/#/fluent2/pivot-table/overview.html
 
-Make sure that you have the compatible versions of [Visual Studio Code](https://code.visualstudio.com/download ) and [NodeJS](https://nodejs.org/en/download) or later version in your machine before starting to work on this project.
+---
 
-## How to run this application
+## 📚 Table of Contents
 
-To run this application, you first need to clone the [getting-started-with-the-typescript-pivot-table-component](https://github.com/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component) repository and then open it in Visual Studio Code. Next, install the necessary dependencies using the `npm install` command. Finally, build and run your project using the `npm start` command to view the output.
+- [🔍 Overview](#-overview)
+- [✨ Features](#-features)
+- [🧭 Quick Start](#-quick-start)
+- [🧩 Minimal Example](#-minimal-example)
+- [🗂️ Project Structure](#-project-structure)
+- [⚙️ Configuration & Customization](#-configuration--customization)
+- [🧪 Development & Tests](#-development--tests)
+- [🤝 Contributing](#-contributing)
+- [📜 License & Support](#-license--support)
+
+---
+
+## 🔍 Overview
+
+This repository is a focused quick-start template that demonstrates how to integrate Syncfusion's `PivotView` (Pivot Table) into a TypeScript application. It highlights features such as `FieldList`, `GroupingBar` and `CalculatedField` and provides copy-paste-ready examples and build scripts using Webpack and TypeScript.
+
+## ✨ Features
+
+- Demo integration of `PivotView` with `FieldList` and `CalculatedField`.
+- Sample dataset for immediate experimentation.
+- Webpack + TypeScript build and dev server.
+- Example of `PivotView.Inject(...)` usage to load optional modules.
+- Small, focused codebase intended for learning and prototyping.
+
+## 🚀 Quick Start
+
+Requirements:
+
+- Node.js (LTS recommended)
+- npm
+
+Commands:
+
+```bash
+git clone https://github.com/SyncfusionExamples/getting-started-with-the-typescript-pivot-table-component.git
+cd getting-started-with-the-typescript-pivot-table-component
+npm install
+npm start
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Note: this repo currently uses the umbrella package `@syncfusion/ej2` in `package.json`. For smaller bundles in production prefer installing the specific package:
+
+```bash
+npm install @syncfusion/ej2-pivotview
+```
+
+## 🧩 Minimal Example
+
+Core initialization (from `src/app/app.ts`):
+
+```ts
+import { PivotView, IDataSet, CalculatedField, FieldList } from '@syncfusion/ej2-pivotview';
+import { pivotData } from './datasource';
+
+PivotView.Inject(CalculatedField, FieldList);
+
+const pivot: PivotView = new PivotView({
+	dataSourceSettings: {
+		dataSource: pivotData as IDataSet[],
+		rows: [{ name: 'Country' }, { name: 'State' }],
+		columns: [{ name: 'Date', caption: 'Date' }, { name: 'Product' }],
+		values: [{ name: 'Amount', caption: 'Sold Amount' }, { name: 'Quantity', caption: 'Quantity' }],
+		calculatedFieldSettings: [{ name: 'Total', formula: '"Sum(Amount)"+"Sum(Quantity)"' }]
+	},
+	showFieldList: true,
+	allowCalculatedField: true,
+	height: 350
+});
+
+pivot.appendTo('#PivotTable');
+```
+
+Sample data (`src/app/datasource.ts`):
+
+```ts
+export const pivotData = [
+	{ Amount: 2100, Country: "Canada", Date: "FY 2005", Product: "Bike", Quantity: 22, State: "Alberta" },
+	{ Amount: 1100, Country: "Canada", Date: "FY 2006", Product: "Van", Quantity: 32, State: "Quebec" },
+	{ Amount: 3100, Country: "Canada", Date: "FY 2007", Product: "Car", Quantity: 22, State: "Alberta" }
+];
+```
+
+Ensure an HTML mount point exists in `src/index.html`:
+
+```html
+<div id="PivotTable"></div>
+```
+
+## 📁 Project Structure
+
+- `package.json` — scripts & deps
+- `webpack.config.js` — bundler config
+- `tsconfig.json` — TypeScript config
+- `src/` — source files
+	- `index.html` — demo host
+	- `app/app.ts` — PivotView init
+	- `app/datasource.ts` — sample data
+	- `resources/styles/` — CSS
+- `e2e/` — end-to-end test scaffolding
+
+## ⚙️ Configuration & Customization
+
+- To reduce bundle size, install only `@syncfusion/ej2-pivotview` and remove the umbrella `@syncfusion/ej2`.
+- For large datasets enable `enableVirtualization` or use `DataManager`.
+- Swap themes by importing the appropriate Syncfusion CSS for your chosen theme.
+
+## 🧪 Development & Tests
+
+- Start dev server: `npm start` (webpack-dev-server)
+- Build: `npm run build`
+- E2E serve: `npm run serve`
+- Run e2e tests: `npm test`
+
+## 🤝 Contributing
+
+Contributions are welcome. Please follow these simple steps:
+
+1. Fork the repo and create a branch: `feature/<short-desc>`
+2. Follow TypeScript strict typing and existing style
+3. Run tests locally and open a PR with a clear description
+
+## 📜 License & Support
+
+Essential JS 2 library is available under the Syncfusion Essential Studio program,  and can be licensed either under the Syncfusion Community License Program or the Syncfusion commercial license.
+
+To be qualified for the Syncfusion Community License Program you must have a gross revenue of less than one (1) million U.S. dollars ($1,000,000.00 USD) per year and have less than five (5) developers in your organization, and agree to be bound by Syncfusion’s terms and conditions. 
+
+Customers who do not qualify for the community license can contact sales@syncfusion.com for commercial licensing options.
+
+Under no circumstances can you use this product without (1) either a Community License or a commercial license and (2) without agreeing and abiding by Syncfusion’s license containing all terms and conditions. 
+
+The Syncfusion license that contains the terms and conditions can be found at 
+https://www.syncfusion.com/content/downloads/syncfusion_license.pdf
